@@ -4,6 +4,7 @@ import (
 	"fmt"
 	payControllers "github.com/solrac97gr/go-template/internals/payments/infrastructure/controllers"
 	prodControllers "github.com/solrac97gr/go-template/internals/products/infrastructure/controllers"
+	userControllers "github.com/solrac97gr/go-template/internals/users/infrastructure/controllers"
 	"github.com/solrac97gr/go-template/pkg/config"
 	"github.com/solrac97gr/go-template/pkg/logger"
 	"github.com/solrac97gr/go-template/pkg/validator"
@@ -15,6 +16,7 @@ type Server struct {
 	validator          *validator.Validator
 	paymentControllers *payControllers.PaymentControllers
 	productControllers *prodControllers.ProductControllers
+	userControllers    *userControllers.UserControllers
 }
 
 func NewServer(
@@ -23,6 +25,7 @@ func NewServer(
 	validator *validator.Validator,
 	paymentControllers *payControllers.PaymentControllers,
 	productControllers *prodControllers.ProductControllers,
+	userControllers *userControllers.UserControllers,
 
 ) *Server {
 	return &Server{
@@ -31,6 +34,7 @@ func NewServer(
 		validator:          validator,
 		paymentControllers: paymentControllers,
 		productControllers: productControllers,
+		userControllers:    userControllers,
 	}
 }
 
